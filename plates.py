@@ -23,10 +23,15 @@ def chk_zero(s):
 
 def chk_last_num(s):       
     j=len(s)  
-    if 48<=ord(s[j-1])<=57:
-        return True
-    else:
-        return False
+    for i in range (len(s)):
+        if i==j-1:
+            break
+        print("s[i]: ",s[i]," :: ",ord(s[i]),"and s[i+1]: ",s[i+1]," :: ",ord(s[i+1]))
+        if ord(s[i+1]) in range (65,90):
+            print("Oh yeah")
+        if 48<=ord(s[i])<=57 and ord(s[i+1]) in range(65,90):
+            return False
+    return True
         
 def chk_let_num(s):
     for _ in range (len(s)):
